@@ -1,3 +1,4 @@
+/* eslint-disable turbo/no-undeclared-env-vars */
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -14,9 +15,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }): JSX.Element {
-  // @ts-ignore
-  // eslint-disable-next-line no-undef, turbo/no-undeclared-env-vars
-  console.log(process.env.NEXT_PUBLIC_VERCEL_URL, VERCEL_URL, "here");
+  console.log(
+    process.env.NEXT_PUBLIC_VERCEL_URL,
+    process.env.VERCEL_URL,
+    "here"
+  );
 
   return (
     <html lang="en">
