@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { Card } from "@repo/ui/card";
 import { Code } from "@repo/ui/code";
@@ -52,6 +53,12 @@ const LINKS = [
 ];
 
 export default function Page(): JSX.Element {
+  console.log("Hello");
+  console.log(
+    process.env.NEXT_PUBLIC_VERCEL_URL,
+    process.env.VERCEL_URL,
+    "here"
+  );
   return (
     <main className={styles.main}>
       <div className={styles.description}>
