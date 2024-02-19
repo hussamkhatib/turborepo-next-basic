@@ -14,6 +14,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }): JSX.Element {
+  console.log(process.env.NEXT_PUBLIC_VERCEL_URL, VERCEL_URL, "here");
+
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
