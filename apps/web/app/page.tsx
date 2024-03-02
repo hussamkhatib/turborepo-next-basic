@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import { Card } from "@repo/ui/card";
 import { Code } from "@repo/ui/code";
@@ -53,12 +54,10 @@ const LINKS = [
 ];
 
 export default function Page(): JSX.Element {
-  console.log("Hello");
-  console.log(
-    process.env.NEXT_PUBLIC_VERCEL_URL,
-    process.env.VERCEL_URL,
-    "here"
-  );
+  console.log("Hey");
+
+  console.log(process.env.NEXT_PUBLIC_NAME);
+
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -86,7 +85,7 @@ export default function Page(): JSX.Element {
       </div>
 
       <Button appName="web" className={styles.button}>
-        Click me!
+        Click me! {process.env.NEXT_PUBLIC_NAME}
       </Button>
 
       <div className={styles.hero}>
