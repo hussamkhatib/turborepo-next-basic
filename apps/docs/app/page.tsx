@@ -79,7 +79,7 @@ export default function Page(): JSX.Element {
       </div>
 
       <Button appName="docs" className={styles.button}>
-        Click me!
+        Click me! (NEXT_PUBLIC_APP_NAME: {process.env.NEXT_PUBLIC_APP_NAME})
       </Button>
 
       <div className={styles.hero}>

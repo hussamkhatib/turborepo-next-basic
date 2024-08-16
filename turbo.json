@@ -20,5 +20,5 @@
       "outputs": ["./.env"]
     }
   },
-  "globalEnv": ["NEXT_PUBLIC_ANALYTICS_ID"]
+  "globalEnv": ["NEXT_PUBLIC_APP_NAME"]
 }
