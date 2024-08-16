@@ -58,6 +58,7 @@ export default function Page(): JSX.Element {
 
   console.log(process.env.NEXT_PUBLIC_NAME);
 
+  console.log("I'm here")
   return (
     <main className={styles.main}>
       <div className={styles.description}>
