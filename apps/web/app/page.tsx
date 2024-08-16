@@ -54,11 +54,7 @@ const LINKS = [
 ];
 
 export default function Page(): JSX.Element {
-  console.log("Hey");
 
-  console.log(process.env.NEXT_PUBLIC_NAME);
-
-  console.log("I'm here")
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -86,7 +82,7 @@ export default function Page(): JSX.Element {
       </div>
 
       <Button appName="web" className={styles.button}>
-        Click me! {process.env.NEXT_PUBLIC_NAME}
+        Click me
       </Button>
 
       <div className={styles.hero}>
