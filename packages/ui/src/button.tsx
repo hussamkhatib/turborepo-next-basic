@@ -14,6 +14,8 @@ export const Button = ({ children, className, appName }: ButtonProps) => {
       className={className}
       onClick={() => alert(`Hello from your ${appName} app!`)}
     >
+      (({process.env.NEXT_PUBLIC_APP_NAME}))
+
       {children}
     </button>
   );
