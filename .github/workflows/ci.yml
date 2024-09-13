@@ -32,6 +32,22 @@ jobs:
           node-version: 20
           cache: "pnpm"
 
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
+      - name: Link Vercel to GitHub Repository
+        run: vercel link --repo --yes --scope=hussamshippercrmcs-projects --token=hpPssXCBC96EfioiTdlTkbgH
+      # TESTING_TURBOREPO
+
+      - name: Pull Vercel Environment Variables
+        run:
+          vercel env pull --environment=preview --token=hpPssXCBC96EfioiTdlTkbgH --cwd apps/web
+          vercel env pull --environment=preview --token=hpPssXCBC96EfioiTdlTkbgH --cwd apps/docs
+
+      - name: Print environment variables
+        run: cat apps/web/.env
+          cat apps/docs/.env
+
       - name: Install dependencies
         run: pnpm install
 
