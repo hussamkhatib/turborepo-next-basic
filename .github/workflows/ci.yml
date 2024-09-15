@@ -42,9 +42,9 @@ jobs:
         run: |
           vercel pull --yes --environment=preview --scope=hussamshippercrmcs-projects --token=LcsIgWU2qwNhnvSUTkZAp5rM --cwd apps/web
 
-      - name: Build Project Artifacts
-        run: |
-          vercel build --scope=hussamshippercrmcs-projects --token=LcsIgWU2qwNhnvSUTkZAp5rM --cwd apps/web --debug
+      # - name: Build Project Artifacts
+      #   run: |
+      #     vercel build --scope=hussamshippercrmcs-projects --token=LcsIgWU2qwNhnvSUTkZAp5rM --cwd apps/web --debug
 
       - name: Deploy Preview to Vercel
         id: deploy
@@ -57,3 +57,5 @@ jobs:
 #       - name: Build
 #         run: pnpm build
 # # LcsIgWU2qwNhnvSUTkZAp5rM tOKEn
+
+# pnpm dev deploy --prebuilt --scope=$scope --token=$token --cwd  $path-to-monorepo
