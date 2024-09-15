@@ -40,7 +40,7 @@ jobs:
 
       - name: Pull Vercel Environment Information
         run: |
-          vercel env pull --yes --environment=preview --scope=hussamshippercrmcs-projects --token=LcsIgWU2qwNhnvSUTkZAp5rM --cwd apps/web
+          vercel pull --yes --environment=preview --scope=hussamshippercrmcs-projects --token=LcsIgWU2qwNhnvSUTkZAp5rM --cwd apps/web
 
       - name: Build Project Artifacts
         run: |
