@@ -36,7 +36,7 @@ jobs:
         run: pnpm install --global "https://github.com/hussamkhatib/vercel.git\#git-meta-data"
 
       - name: Link Vercel to GitHub Repository
-        run: vercel-monorepo link --repo --yes --scope=hussamshippercrmcs-projects --token=LcsIgWU2qwNhnvSUTkZAp5rM
+        run: npx vercel-monorepo link --repo --yes --scope=hussamshippercrmcs-projects --token=LcsIgWU2qwNhnvSUTkZAp5rM
 
       # - name: Pull Vercel Environment Information
       #   run: |
