@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      vercel-monorepo:
+        specifier: github:hussamkhatib/vercel#git-meta-data
+        version: github.com/hussamkhatib/vercel/8958b407d56c2308597669264709c9df56c57cc0
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
@@ -4796,3 +4800,11 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  github.com/hussamkhatib/vercel/8958b407d56c2308597669264709c9df56c57cc0:
+    resolution: {tarball: https://codeload.github.com/hussamkhatib/vercel/tar.gz/8958b407d56c2308597669264709c9df56c57cc0}
+    name: vercel-monorepo
+    version: 0.0.0
+    prepare: true
+    requiresBuild: true
+    dev: false
