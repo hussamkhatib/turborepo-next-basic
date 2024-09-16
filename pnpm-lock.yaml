@@ -7,6 +7,13 @@ settings:
 importers:
 
   .:
+    dependencies:
+      randomcolor:
+        specifier: github:davidmerfield/randomColor
+        version: github.com/davidmerfield/randomColor/68e564292df835ea1700269d455bdee372fd74d5
+      vercel-monorepo:
+        specifier: github:hussamkhatib/vercel#git-meta-data
+        version: github.com/hussamkhatib/vercel/8958b407d56c2308597669264709c9df56c57cc0
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
@@ -4796,3 +4803,17 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  github.com/davidmerfield/randomColor/68e564292df835ea1700269d455bdee372fd74d5:
+    resolution: {tarball: https://codeload.github.com/davidmerfield/randomColor/tar.gz/68e564292df835ea1700269d455bdee372fd74d5}
+    name: randomcolor
+    version: 0.6.2
+    dev: false
+
+  github.com/hussamkhatib/vercel/8958b407d56c2308597669264709c9df56c57cc0:
+    resolution: {tarball: https://codeload.github.com/hussamkhatib/vercel/tar.gz/8958b407d56c2308597669264709c9df56c57cc0}
+    name: vercel-monorepo
+    version: 0.0.0
+    prepare: true
+    requiresBuild: true
+    dev: false
