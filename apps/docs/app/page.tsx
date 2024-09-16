@@ -31,7 +31,7 @@ const LINKS = [
   {
     title: "Docs",
     href: "https://turbo.build/repo/docs",
-    description: "Find in-depth information about Turborepo features and API.",
+    description: "Find in-depth information about Turborepo features and API",
   },
   {
     title: "Learn",
@@ -79,7 +79,7 @@ export default function Page(): JSX.Element {
       </div>
 
       <Button appName="docs" className={styles.button}>
-        Click me!
+        Click me! (NEXT_PUBLIC_APP_NAME: {process.env.NEXT_PUBLIC_APP_NAME})
       </Button>
 
       <div className={styles.hero}>

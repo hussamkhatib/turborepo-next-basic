@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  build:
+    name: Build and Test
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    # To use Remote Caching, uncomment the next lines and follow the steps below.
+    # env:
+    #  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+    #  TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+
+      - name: Move to Vercel CLI
+        run: |
+          cd node_modules/vercel-monorepo
+          pnpm install
+          cd packages/cli
+
+      - name: Link Vercel to GitHub Repository
+        run: pnpm dev link --repo --yes --scope=hussamshippercrmcs-projects --token=LcsIgWU2qwNhnvSUTkZAp5rM
+
+      # - name: Pull Vercel Environment Information
+      #   run: |
+      #     # pnpm dev pull --yes --environment=preview --scope=hussamshippercrmcs-projects --token=LcsIgWU2qwNhnvSUTkZAp5rM --cwd apps/webz
+
+      # - name: Build Project Artifacts
+      #   run: |
+      #     vercel build --scope=hussamshippercrmcs-projects --token=LcsIgWU2qwNhnvSUTkZAp5rM --cwd apps/web --debug
+
+      # - name: Deploy Preview to Vercel
+      #   id: deploy
+      #   run: |
+      #     vercel deploy --prebuilt --scope=hussamshippercrmcs-projects --token=LcsIgWU2qwNhnvSUTkZAp5rM --cwd apps/web --debug
+#       - name: Install dependencies
+#         run: pnpm install
+
+#       - name: Build
+#         run: pnpm build
+# # LcsIgWU2qwNhnvSUTkZAp5rM tOKEn
+
+# pnpm dev deploy --prebuilt --scope=$scope --token=$token --cwd  $path-to-monorepo

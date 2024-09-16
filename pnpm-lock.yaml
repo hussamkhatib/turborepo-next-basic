@@ -7,6 +7,13 @@ settings:
 importers:
 
   .:
+    dependencies:
+      randomcolor:
+        specifier: github:davidmerfield/randomColor
+        version: github.com/davidmerfield/randomColor/68e564292df835ea1700269d455bdee372fd74d5
+      vercel-monorepo:
+        specifier: github:hussamkhatib/vercel#git-meta-data
+        version: github.com/hussamkhatib/vercel/8958b407d56c2308597669264709c9df56c57cc0
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
@@ -14,12 +21,18 @@ importers:
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:packages/typescript-config
+      dotenv-checker:
+        specifier: ^1.1.5
+        version: 1.1.5
+      dotenv-cli:
+        specifier: ^7.0.0
+        version: 7.4.2
       prettier:
         specifier: ^3.1.1
         version: 3.1.1
       turbo:
-        specifier: ^1.12.1
-        version: 1.12.1
+        specifier: ^2.0.14
+        version: 2.0.14
 
   apps/docs:
     dependencies:
@@ -1115,6 +1128,11 @@ packages:
       color-convert: 2.0.1
     dev: true
 
+  /app-root-path@3.1.0:
+    resolution: {integrity: sha512-biN3PwB2gUtjaYy/isrU3aNWI5w+fAfvHkSvCKeQGxhmYpwKFUxudR3Yya+KqVRHBmEDYh+/lTozYCFbmzX4nA==}
+    engines: {node: '>= 6.0.0'}
+    dev: true
+
   /arg@4.1.3:
     resolution: {integrity: sha512-58S9QDqG0Xx27YwPSt9fJxivjYl432YCwfDMfZ+71RAqUrZef7LrKQZ3LHLOwCS4FLNBplP533Zx895SeOCHvA==}
     dev: true
@@ -1479,6 +1497,11 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
+  /commander@9.1.0:
+    resolution: {integrity: sha512-i0/MaqBtdbnJ4XQs4Pmyb+oFQl+q0lsAmokVUH92SlSw4fkeAcG3bVon+Qt7hmtF+u3Het6o4VgrcY3qAoEB6w==}
+    engines: {node: ^12.20.0 || >=14}
+    dev: true
+
   /concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
     dev: true
@@ -1555,6 +1578,11 @@ packages:
 
   /deep-is@0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
+    dev: true
+
+  /deepmerge@4.3.1:
+    resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
+    engines: {node: '>=0.10.0'}
     dev: true
 
   /default-browser-id@3.0.0:
@@ -1674,8 +1702,41 @@ packages:
       no-case: 2.3.2
     dev: true
 
+  /dotenv-checker@1.1.5:
+    resolution: {integrity: sha512-Cid4rHVKUD2WroyMLZbsaATc/messNAdtRjkzHk3wL716dBCfeHxpTVJAcjO5BP+7AFXx9Nnzd1vBBomIDr7uA==}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      app-root-path: 3.1.0
+      chalk: 4.1.2
+      commander: 9.1.0
+      deepmerge: 4.3.1
+      gradient-string: 2.0.0
+      inquirer: 8.2.1
+    dev: true
+
+  /dotenv-cli@7.4.2:
+    resolution: {integrity: sha512-SbUj8l61zIbzyhIbg0FwPJq6+wjbzdn9oEtozQpZ6kW2ihCcapKVZj49oCT3oPM+mgQm+itgvUQcG5szxVrZTA==}
+    hasBin: true
+    dependencies:
+      cross-spawn: 7.0.3
+      dotenv: 16.4.5
+      dotenv-expand: 10.0.0
+      minimist: 1.2.8
+    dev: true
+
+  /dotenv-expand@10.0.0:
+    resolution: {integrity: sha512-GopVGCpVS1UKH75VKHGuQFqS1Gusej0z4FyQkPdwjil2gNIv+LNsqBlboOzpJFZKVT95GkCyWJbBSdFEFUWI2A==}
+    engines: {node: '>=12'}
+    dev: true
+
   /dotenv@16.0.3:
     resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
+    dev: true
+
+  /dotenv@16.4.5:
+    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
     engines: {node: '>=12'}
     dev: true
 
@@ -2546,6 +2607,14 @@ packages:
   /graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
+  /gradient-string@2.0.0:
+    resolution: {integrity: sha512-xa+FXy1bOfJWqA4xKlKTfVXxuOwNRwvsO7Tj8oi/6Rodfgo4ENKApVOU95KxTKb7eML9E9eA2Uqq3C9LtVPM5w==}
+    engines: {node: '>=10'}
+    dependencies:
+      chalk: 4.1.2
+      tinygradient: 1.1.5
+    dev: true
+
   /gradient-string@2.0.2:
     resolution: {integrity: sha512-rEDCuqUQ4tbD78TpzsMtt5OIf0cBCSDWSJtUDaF6JsAh+k0v9r++NzxNEG87oDZx9ZwGhD8DaezR2L/yrw0Jdw==}
     engines: {node: '>=10'}
@@ -2719,6 +2788,26 @@ packages:
       mute-stream: 0.0.8
       run-async: 2.4.1
       rxjs: 6.6.7
+      string-width: 4.2.3
+      strip-ansi: 6.0.1
+      through: 2.3.8
+    dev: true
+
+  /inquirer@8.2.1:
+    resolution: {integrity: sha512-pxhBaw9cyTFMjwKtkjePWDhvwzvrNGAw7En4hottzlPvz80GZaMZthdDU35aA6/f5FRZf3uhE057q8w1DE3V2g==}
+    engines: {node: '>=12.0.0'}
+    dependencies:
+      ansi-escapes: 4.3.2
+      chalk: 4.1.2
+      cli-cursor: 3.1.0
+      cli-width: 3.0.0
+      external-editor: 3.1.0
+      figures: 3.2.0
+      lodash: 4.17.21
+      mute-stream: 0.0.8
+      ora: 5.4.1
+      run-async: 2.4.1
+      rxjs: 7.8.1
       string-width: 4.2.3
       strip-ansi: 6.0.1
       through: 2.3.8
@@ -4387,64 +4476,64 @@ packages:
       typescript: 5.3.3
     dev: true
 
-  /turbo-darwin-64@1.12.1:
-    resolution: {integrity: sha512-Cq760v0vJH5vQbK0uJZS8msqzYuZZXYdcpFeqBqrdIT5Kfd7tHjo94d9L1lZLP4eoSyXs4CUVnOw7MqD8dHnfQ==}
+  /turbo-darwin-64@2.0.14:
+    resolution: {integrity: sha512-kwfDmjNwlNfvtrvT29+ZBg5n1Wvxl891bFHchMJyzMoR0HOE9N1NSNdSZb9wG3e7sYNIu4uDkNk+VBEqJW0HzQ==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-darwin-arm64@1.12.1:
-    resolution: {integrity: sha512-RlKegAYEvHBa1K+fl9d4iz0jFUw7LdEsTXlg1ppFIrl234bQ5y3ON8LBhLsf9M2ADzNzgT7Io33H0Cju0zneMg==}
+  /turbo-darwin-arm64@2.0.14:
+    resolution: {integrity: sha512-m3LXYEshCx3wc4ZClM6gb01KYpFmtjQ9IBF3A7ofjb6ahux3xlYZJZ3uFCLAGHuvGLuJ3htfiPbwlDPTdknqqw==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-64@1.12.1:
-    resolution: {integrity: sha512-S6bvCEEkJvPxH7hMcGDDJFCFWk4/lpDGsQun6vzcj0gqbj5BMqw3xNrpPQDhg18+9oRQJG5F6M48pSgim7XZDg==}
+  /turbo-linux-64@2.0.14:
+    resolution: {integrity: sha512-7vBzCPdoTtR92SNn2JMgj1FlMmyonGmpMaQdgAB1OVYtuQ6NVGoh7/lODfaILqXjpvmFSVbpBIDrKOT6EvcprQ==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-arm64@1.12.1:
-    resolution: {integrity: sha512-QLy+Q3rIHXbTT1m49Sv7FO+z0TqH8L2Q18UlUu3TULm5bWzv5DVnvOebvFtTOHF3nAdr1CK0QiqhMrEPn++IKg==}
+  /turbo-linux-arm64@2.0.14:
+    resolution: {integrity: sha512-jwH+c0bfjpBf26K/tdEFatmnYyXwGROjbr6bZmNcL8R+IkGAc/cglL+OToqJnQZTgZvH7uDGbeSyUo7IsHyjuA==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-windows-64@1.12.1:
-    resolution: {integrity: sha512-Ih7SP/jJ1rlNbti7RTvdV3u9GeM91mOaAtZssShBrncqV5Mzb+MDqF4aAv1prDVo56ME0GXEd6tFNrQRFYjgEA==}
+  /turbo-windows-64@2.0.14:
+    resolution: {integrity: sha512-w9/XwkHSzvLjmioo6cl3S1yRfI6swxsV1j1eJwtl66JM4/pn0H2rBa855R0n7hZnmI6H5ywLt/nLt6Ae8RTDmw==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-windows-arm64@1.12.1:
-    resolution: {integrity: sha512-jzUMzaBsGHq2NHotAT/jRaoxetdohmDNEt2WjiN1B8AM6wNKcufGVHk0GMoDbm1pcSi4HZOSf1gN+AlII6l3Dg==}
+  /turbo-windows-arm64@2.0.14:
+    resolution: {integrity: sha512-XaQlyYk+Rf4xS5XWCo8XCMIpssgGGy8blzLfolN6YBp4baElIWMlkLZHDbGyiFmCbNf9I9gJI64XGRG+LVyyjA==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo@1.12.1:
-    resolution: {integrity: sha512-7e+BYijfIuVtv6kfBl/KKOsu67JVdsHK3FNI4++NTYe/Ju+DAKQDKoPJ8wqthZo1QzUzeabvc/WCL41pwY7xug==}
+  /turbo@2.0.14:
+    resolution: {integrity: sha512-00JjdCMD/cpsjP0Izkjcm8Oaor5yUCfDwODtaLb+WyblyadkaDEisGhy3Dbd5az9n+5iLSPiUgf+WjPbns6MRg==}
     hasBin: true
     optionalDependencies:
-      turbo-darwin-64: 1.12.1
-      turbo-darwin-arm64: 1.12.1
-      turbo-linux-64: 1.12.1
-      turbo-linux-arm64: 1.12.1
-      turbo-windows-64: 1.12.1
-      turbo-windows-arm64: 1.12.1
+      turbo-darwin-64: 2.0.14
+      turbo-darwin-arm64: 2.0.14
+      turbo-linux-64: 2.0.14
+      turbo-linux-arm64: 2.0.14
+      turbo-windows-64: 2.0.14
+      turbo-windows-arm64: 2.0.14
     dev: true
 
   /type-check@0.4.0:
@@ -4714,3 +4803,17 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  github.com/davidmerfield/randomColor/68e564292df835ea1700269d455bdee372fd74d5:
+    resolution: {tarball: https://codeload.github.com/davidmerfield/randomColor/tar.gz/68e564292df835ea1700269d455bdee372fd74d5}
+    name: randomcolor
+    version: 0.6.2
+    dev: false
+
+  github.com/hussamkhatib/vercel/8958b407d56c2308597669264709c9df56c57cc0:
+    resolution: {tarball: https://codeload.github.com/hussamkhatib/vercel/tar.gz/8958b407d56c2308597669264709c9df56c57cc0}
+    name: vercel-monorepo
+    version: 0.0.0
+    prepare: true
+    requiresBuild: true
+    dev: false
